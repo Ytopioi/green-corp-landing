@@ -96,3 +96,7 @@ font-weight: 400;
 	width: 100px;
 	height: 100px;
 }
+
+.form__conteiner {
+	width: 550px;
+}
