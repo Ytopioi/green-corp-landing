@@ -52,7 +52,7 @@ button {
 
 .about {
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	align-items: center;
 
 	padding-top: 115px;
@@ -184,6 +184,8 @@ button:hover {
 
 footer {
 	padding: 90px 20px;
+	font-size: 16px;  
+   font-weight: 600;
 }
 
 .footer__conteiner {
