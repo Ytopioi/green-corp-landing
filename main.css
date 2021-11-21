@@ -47,6 +47,8 @@ button {
 
 /* Page */
 
+/* About */
+
 .about {
 	display: flex;
 	justify-content: space-between;
@@ -68,7 +70,7 @@ button {
 .about p {
 	font-size: 18px;
 	line-height: 30px;
-font-weight: 400;
+	font-weight: 400;
 	opacity: 0.8;
 
 }
@@ -76,11 +78,11 @@ font-weight: 400;
 .about button {
 	margin-top: 20px;
 	padding: 20px 25px;
-	
+
 	font-size: 18px;
-	
+
 	border-radius: 20px;
-	
+
 
 }
 
@@ -97,6 +99,77 @@ font-weight: 400;
 	height: 100px;
 }
 
+/* Form */
+
+.form {
+	padding-top: 115px;
+	padding-bottom: 115px;
+
+	color: #fff;
+	text-align: center;
+
+	background-color: #1D263A;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.form h1 {
+	font-size: 48px;
+}
+
+.form p {
+	font-size: 18px;
+	opacity: 0.65;
+}
+
 .form__conteiner {
 	width: 550px;
+}
+
+.form__group {
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+}
+
+.form form {
+	margin-top: 60px;
+
+	display: grid;
+	grid-gap: 20px;
+}
+
+.form label {
+	margin-bottom: 15px;
+
+	font-size: 18px;
+	font-weight: 600;
+}
+
+.form input,
+.form select {
+	font-size: 18px;
+	color: #213053;
+	height: 60px;
+	padding: 0 20px;
+
+	border-radius: 15px;
+	border: none;
+}
+
+.form__submit {
+	margin-top: 40px;
+
+	font-size: 18px;
+	font-weight: 600;
+}
+
+select {
+	appearance: none;
+}
+
+input {
+	outline: none;
 }
