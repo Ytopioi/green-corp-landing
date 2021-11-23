@@ -10,9 +10,16 @@ body {
 header {
 	padding: 20px;
 
+	background-color: #fff;
+
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+
+	position: sticky;
+	top: 0;
+
+	z-index: 1;
 }
 
 .header-logo {
@@ -91,11 +98,11 @@ button {
 	max-width: 550px;
 }
 
-.about__img__solar {
+.about__img-solar {
 	width: 500px;
 }
 
-.about__img__sun {
+.about__img-sun {
 	width: 100px;
 	height: 100px;
 
@@ -103,6 +110,8 @@ button {
 	animation-duration: 10s;
 	animation-iteration-count: infinite;
 	animation-timing-function: linear;
+
+	position: absolute;
 }
 
 @keyframes rotation {
@@ -111,7 +120,7 @@ button {
 	}
 
 	100% {
-	transform: rotate(360deg);
+		transform: rotate(360deg);
 	}
 }
 
@@ -234,4 +243,90 @@ h3 {
 
 .footer__links a {
 	margin-bottom: 15px;
+}
+
+/* Media */
+
+@media (max-width: 720px) {
+
+	header {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	section {
+		padding-left: 20px;
+		padding-right: 20px;
+		margin-top: 50px;
+		margin-bottom: 50px;
+	}
+
+	footer {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.about {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.form {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	h1 {
+		font-size: 36px;
+		line-height: 40;
+	}
+
+	.about__img-solar {
+		width: 280px;
+	}
+
+	.about__img-sun {
+		width: 75px;
+	}
+}
+
+@media (max-width: 320px) {
+
+	header {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	section {
+		padding-left: 10px;
+		padding-right: 10px;
+		margin-top: 50px;
+		margin-bottom: 50px;
+	}
+
+	footer {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	.about {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	.form {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	h1 {
+		font-size: 36px;
+		line-height: 40;
+	}
+
+	.about__img-solar {
+		width: 280px;
+	}
+
+	.about__img-sun {
+		width: 75px;
+	}
 }
