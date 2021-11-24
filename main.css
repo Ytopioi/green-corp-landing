@@ -68,7 +68,7 @@ button {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	flex-wrap: wrap;
+	/* flex-wrap: wrap; */
 }
 
 .about h1 {
@@ -218,7 +218,7 @@ footer {
 .footer__conteiner {
 	display: flex;
 	justify-content: space-between;
-	flex-wrap: wrap;
+
 }
 
 .footer__copyright {
@@ -273,6 +273,10 @@ h3 {
 		height: 75px;
 	}
 
+	.footer__conteiner {
+		flex-basis: 100%;
+	}
+
 }
 
 @media (max-width: 320px) {
@@ -291,12 +295,13 @@ h3 {
 		margin: 50px 0;
 	}
 
-	.about {
+	.about,
+	.footer__conteiner {
 		flex-direction: column-reverse;
 	}
 
-	.footer__conteiner {
-		flex-basis: 100%;
+		.footer__conteiner {
+		flex-direction: column;
 	}
 
 } 
