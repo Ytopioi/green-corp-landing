@@ -1,5 +1,7 @@
 'use strict';
 
+/* В отзывах +5000 анимация */
+
 const INCREASE_NUMBER_ANIMATION_SPEED = 50;
 
 function increaseNumberAnimationStep(i, element, endNumber) {
@@ -9,7 +11,7 @@ function increaseNumberAnimationStep(i, element, endNumber) {
 		} else {
 			element.innerText = i;
 		}
-		i += 100;
+		i += 200;
 
 		setTimeout(function () {
 			increaseNumberAnimationStep(i, element, endNumber);
@@ -24,7 +26,10 @@ function initIncreaseNumberAnimation() {
 
 }
 
-initIncreaseNumberAnimation();
+// initIncreaseNumberAnimation();// перенесли в функцию updateScroll
+
+/* В форме доп строка */
+
 
 document.querySelector("#budget").addEventListener("change", function handleSelectChange(event) {
 	// console.log(event);
@@ -49,4 +54,53 @@ document.querySelector("#budget").addEventListener("change", function handleSele
 
 		document.querySelector("#form form").removeChild(otherInput);
 	}
-})
+});
+
+/* Изменение шапки header при скроле и запуск анимации счетчика*/
+
+let animationInited = false;
+
+function updateScroll() {
+	// для шапки
+	// let header = document.querySelector("header");
+	if (window.screenY > 0) {
+		document.querySelector('header').classList.add('header__scrolled');
+		// header.classList.add("header__scrolled")
+		// console.log(window.scrollY);
+		// console.log(header);
+	} else {
+		document.querySelector('header').classList.remove('header__scrolled');
+		// header.classList.remove("header__scrolled");
+		// console.log(window.scrollY);
+		// console.log(header);
+	}
+
+	// для счетчика
+	let windowBottomPosition = window.scrollY + window.innerHeight;
+	let countElementPosition = document.querySelector('.features__clients-count').offsetTop;
+
+	if (windowBottomPosition >= countElementPosition && !animationInited) {
+		animationInited = true;
+		initIncreaseNumberAnimation();
+	}
+}
+
+window.addEventListener("scroll", updateScroll)
+
+/*Добавляем плавный переход к якорю*/
+
+function addSmoothScroll(anchor) {
+	anchor.addEventListener('click', function (e) {
+		e.preventDefault();
+
+		document.querySelector(this.getAttribute('href')).scrollIntoView({
+			behavior: 'smooth'
+		});
+	});
+}
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+	addSmoothScroll(anchor);
+});
+
+addSmoothScroll(document.querySelector('.more-button'));
