@@ -10,7 +10,7 @@ body {
 header {
 	padding: 20px;
 
-	background: none;
+	/* background-color: rgba(255, 255, 255, 0); */
 	
 
 	display: flex;
@@ -20,6 +20,7 @@ header {
 	position: fixed;
 	left: 0;
 	right: 0;
+	top: 0;
 
 	z-index: 1;
 
@@ -66,8 +67,6 @@ button {
 
 /* About */
 
-
-
 .about {
 	padding-top: 200px;
 	padding-bottom: 115px;
@@ -87,10 +86,9 @@ button {
 .orb-canvas {
 	position:absolute;	
 	top: 0;
-	right: 0;
+	left: 0;
 	height: 100%;
-	
-
+	width: 100%;
 }
 
 .about h1 {

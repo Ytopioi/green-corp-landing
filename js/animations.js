@@ -30,7 +30,6 @@ function initIncreaseNumberAnimation() {
 
 /* В форме доп строка */
 
-
 document.querySelector("#budget").addEventListener("change", function handleSelectChange(event) {
 	// console.log(event);
 
@@ -58,21 +57,12 @@ document.querySelector("#budget").addEventListener("change", function handleSele
 
 /* Изменение шапки header при скроле и запуск анимации счетчика*/
 
-let animationInited = false;
-
 function updateScroll() {
 	// для шапки
-	// let header = document.querySelector("header");
-	if (window.screenY > 0) {
+	if (window.scrollY > 0) {
 		document.querySelector('header').classList.add('header__scrolled');
-		// header.classList.add("header__scrolled")
-		// console.log(window.scrollY);
-		// console.log(header);
 	} else {
 		document.querySelector('header').classList.remove('header__scrolled');
-		// header.classList.remove("header__scrolled");
-		// console.log(window.scrollY);
-		// console.log(header);
 	}
 
 	// для счетчика
@@ -84,7 +74,7 @@ function updateScroll() {
 		initIncreaseNumberAnimation();
 	}
 }
-
+let animationInited = false;
 window.addEventListener("scroll", updateScroll)
 
 /*Добавляем плавный переход к якорю*/
